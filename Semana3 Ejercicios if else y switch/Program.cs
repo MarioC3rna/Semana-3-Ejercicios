@@ -1,65 +1,33 @@
-﻿{
-    Console.WriteLine("---Calcular el Área de una Figura Geométrica---");
+﻿
+    Console.WriteLine("---Calcular el Mayor de Tres numeros---");
     Console.WriteLine("");
-
-    Console.WriteLine("Elija que figura quiere calcular");
-    Console.WriteLine("1. Triangulo");
-    Console.WriteLine("2. Cuadrado");
-    Console.WriteLine("3. Circulo");
 
     try
     {
-        int opcionEle = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese tres numeros ");
+        Console.WriteLine("Primer numero");
+        int n1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Segundo numero");
+        int n2 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Tercer numero");
+        int n3 = int.Parse(Console.ReadLine());
 
-        if (opcionEle == 1)
+        if (n2 < n1 && n3 < n1)
         {
-            CalcularTriangulo();
+            Console.WriteLine("El numero mayor es " + n1);
         }
-        else if (opcionEle == 2)
+
+        else if (n1 < n2 && n3 < n2)
         {
-            CalcularCuadrado();
+            Console.WriteLine("El numero mayor es " + n2);
         }
-        else if (opcionEle == 3)
+
+        else if (n1 < n3 && n2 < n3)
         {
-            CalcularCirculo();
-        }
-        else
-        {
-            Console.WriteLine("Opcion no valida");
+            Console.WriteLine("El numero mayor es " + n1);
         }
     }
     catch (FormatException)
     {
-        Console.WriteLine("Error: Por favor, introduzca un numero valido.");
+        Console.WriteLine("Error: Ingrese numeros validos");
     }
-    catch (OverflowException)
-    {
-        Console.WriteLine("Error: El numero introducido no esta en el rango");
-    }
-}
-
-static void CalcularTriangulo()
-{
-    Console.WriteLine("Ingrese la base");
-    double baseT = double.Parse(Console.ReadLine());
-    Console.WriteLine("Ingrese la altura");
-    double alturaT = double.Parse(Console.ReadLine());
-    double areaT = (baseT * alturaT) / 2;
-    Console.WriteLine("El area del Triangulo es " + areaT);
-}
-
-static void CalcularCuadrado()
-{
-    Console.WriteLine("Ingrese el lado del cuadrado");
-    double ladoC = double.Parse(Console.ReadLine());
-    double areaC = ladoC * ladoC;
-    Console.WriteLine("El área del cuadrado es: " + areaC);
-}
-
-static void CalcularCirculo()
-{
-    Console.WriteLine("Ingrese el radio del círculo:");
-    double radioC = double.Parse(Console.ReadLine());
-    double areaC = Math.PI * Math.Pow(radioC, 2);
-    Console.WriteLine("El área del círculo es: " + areaC);
-}
