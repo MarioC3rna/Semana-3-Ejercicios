@@ -1,45 +1,37 @@
 ﻿
-Console.WriteLine("---Convertir un Numero de Letra a Numero---");
+Console.WriteLine("---Evaluar la Calificación de un Examen---");
 Console.WriteLine("");
-Console.WriteLine("Escribe en letras un numero del 1 al 5 en minusculas");
 
 try
 {
-    string Npalabra = Console.ReadLine().ToLower();
-    int n1;
-    switch (Npalabra)
+    Console.WriteLine("Ingrese la calificación del examen:");
+    int calificacion = int.Parse(Console.ReadLine());
+
+    switch (calificacion)
     {
-        case "uno":
-            n1 = 1;
-            Console.WriteLine("Este es su numero convertido " + n1);
+        case int n when (n >= 90 && n <= 100):
+            Console.WriteLine("Sobresaliente");
             break;
-
-        case "Dos":
-            n1 = 2;
-            Console.WriteLine("Este es su numero convertido " + n1);
+        case int n when (n >= 80 && n <= 89):
+            Console.WriteLine("Notable");
             break;
-
-        case "tres":
-            n1 = 3;
-            Console.WriteLine("Este es su numero convertido " + n1);
+        case int n when (n >= 70 && n <= 79):
+            Console.WriteLine("Aprobatoria");
             break;
-
-        case "cuatro":
-            n1 = 4;
-            Console.WriteLine("Este es su numero convertido " + n1);
+        case int n when (n >= 60 && n <= 69):
+            Console.WriteLine("No aprobatoria");
             break;
-
-        case "cinco":
-            n1 = 5;
-            Console.WriteLine("Este es su numero convertido " + n1);
-            break;
-
-
         default:
-            throw new Exception("Ese numero no esta en el rango ");
+            Console.WriteLine("Calificación no válida");
+            break;
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Ingrese numeros validos");
+    Console.WriteLine("Error: Ingrese un numero entero.");
 }
+catch (OverflowException)
+{
+    Console.WriteLine("Error: El número que ingreso no esta en el rango.");
+}
+
