@@ -1,33 +1,26 @@
 ﻿
-    Console.WriteLine("---Calcular el Mayor de Tres numeros---");
-    Console.WriteLine("");
+Console.WriteLine("---Mostrar un Mensaje de Aprobación o Rechazo de Préstamo---");
+Console.WriteLine("");
 
-    try
+Console.WriteLine("Ingrese la cantidad del prestamo");
+double n1 = double.Parse(Console.ReadLine());
+Console.WriteLine("Ingrese su edad");
+
+try
+{
+    int n2 = int.Parse(Console.ReadLine());
+
+    if (n1 < 5000 || n2 > 60)
     {
-        Console.WriteLine("Ingrese tres numeros ");
-        Console.WriteLine("Primer numero");
-        int n1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Segundo numero");
-        int n2 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Tercer numero");
-        int n3 = int.Parse(Console.ReadLine());
-
-        if (n2 < n1 && n3 < n1)
-        {
-            Console.WriteLine("El numero mayor es " + n1);
-        }
-
-        else if (n1 < n2 && n3 < n2)
-        {
-            Console.WriteLine("El numero mayor es " + n2);
-        }
-
-        else if (n1 < n3 && n2 < n3)
-        {
-            Console.WriteLine("El numero mayor es " + n1);
-        }
+        Console.WriteLine("El prestamo es Aprobado");
     }
-    catch (FormatException)
+
+    else
     {
-        Console.WriteLine("Error: Ingrese numeros validos");
+        Console.WriteLine("El prestamos ha sido denegado");
     }
+}
+catch (FormatException)
+{
+    Console.WriteLine("Error:Por favor, Ingrese numeros");
+}
