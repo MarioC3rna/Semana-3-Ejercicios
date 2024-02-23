@@ -1,39 +1,27 @@
 ﻿
-Console.WriteLine("---Calcular el Importe a Pagar por un Servicio---");
+
+Console.WriteLine("---Validar la edad para el Club---");
 Console.WriteLine("");
-Console.WriteLine("Elige que servicio quiere");
-Console.WriteLine("1.Lavado de Auto");
-Console.WriteLine("2.Cambio de aceite");
-Console.WriteLine("3.Revision Mecanica");
+
+Console.WriteLine("Ingrese su edad");
+
+
 try
 {
     int n1 = int.Parse(Console.ReadLine());
-    string Ser;
-    switch (n1)
+    if (n1 >= 18)
     {
-        case 1:
+        Console.WriteLine("Puedes entrar al Club");
+    }
 
-            Ser = "Lavado de Auto ";
-            Console.WriteLine("El servicio que elijo es " + Ser + " el importe a pagar es de 100");
-            break;
-
-        case 2:
-            Ser = "Cambio de Aceite ";
-            Console.WriteLine("El servicio que elijo es " + Ser + " el importe a pagar es de 200");
-            break;
-
-        case 3:
-            Ser = "Revision Mecanica ";
-            Console.WriteLine("El servicio que elijo es " + Ser + " el importe a pagar es de 300");
-            break;
-
-
-        default:
-            throw new Exception("Ese numero no esta en el rango ");
-
+    else
+    {
+        Console.WriteLine("No puedes entrar al Club");
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Ingrese numeros validos");
+    Console.WriteLine("Error: Por favor, ingrese un número válido para la edad.");
 }
+
+
