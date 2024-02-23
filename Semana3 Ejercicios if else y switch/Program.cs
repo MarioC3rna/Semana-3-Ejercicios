@@ -1,65 +1,22 @@
-﻿{
-    Console.WriteLine("---Calcular el Área de una Figura Geométrica---");
-    Console.WriteLine("");
+﻿
+Console.WriteLine("Determinar si un numero es Par o Impar");
+try
+{    
+    
+    Console.WriteLine("Ingrese un número:");
+    int numero = int.Parse(Console.ReadLine());
 
-    Console.WriteLine("Elija que figura quiere calcular");
-    Console.WriteLine("1. Triangulo");
-    Console.WriteLine("2. Cuadrado");
-    Console.WriteLine("3. Circulo");
-
-    try
+   
+    if (numero % 2 == 0)
     {
-        int opcionEle = int.Parse(Console.ReadLine());
-
-        if (opcionEle == 1)
-        {
-            CalcularTriangulo();
-        }
-        else if (opcionEle == 2)
-        {
-            CalcularCuadrado();
-        }
-        else if (opcionEle == 3)
-        {
-            CalcularCirculo();
-        }
-        else
-        {
-            Console.WriteLine("Opcion no valida");
-        }
+        Console.WriteLine("El número ingresado es par.");
     }
-    catch (FormatException)
+    else
     {
-        Console.WriteLine("Error: Por favor, introduzca un numero valido.");
-    }
-    catch (OverflowException)
-    {
-        Console.WriteLine("Error: El numero introducido no esta en el rango");
+        Console.WriteLine("El número ingresado es impar.");
     }
 }
-
-static void CalcularTriangulo()
+catch (FormatException)
 {
-    Console.WriteLine("Ingrese la base");
-    double baseT = double.Parse(Console.ReadLine());
-    Console.WriteLine("Ingrese la altura");
-    double alturaT = double.Parse(Console.ReadLine());
-    double areaT = (baseT * alturaT) / 2;
-    Console.WriteLine("El area del Triangulo es " + areaT);
-}
-
-static void CalcularCuadrado()
-{
-    Console.WriteLine("Ingrese el lado del cuadrado");
-    double ladoC = double.Parse(Console.ReadLine());
-    double areaC = ladoC * ladoC;
-    Console.WriteLine("El área del cuadrado es: " + areaC);
-}
-
-static void CalcularCirculo()
-{
-    Console.WriteLine("Ingrese el radio del círculo:");
-    double radioC = double.Parse(Console.ReadLine());
-    double areaC = Math.PI * Math.Pow(radioC, 2);
-    Console.WriteLine("El área del círculo es: " + areaC);
+    Console.WriteLine("Error: Por favor ingrese un número válido.");
 }
