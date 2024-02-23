@@ -1,24 +1,22 @@
-﻿try
-{
+﻿
+Console.WriteLine("Determinar si un numero es Par o Impar");
+try
+{    
     
-    Console.WriteLine("Ingrese el precio original del producto:");
-    double POriginal = double.Parse(Console.ReadLine());
+    Console.WriteLine("Ingrese un número:");
+    int numero = int.Parse(Console.ReadLine());
 
-
-    if (POriginal > 100)
+   
+    if (numero % 2 == 0)
     {
-       
-        double descuento = POriginal * 0.10;
-        double precioFinal = POriginal - descuento;
-        Console.WriteLine("El precio final con descuento es: " + precioFinal);
+        Console.WriteLine("El número ingresado es par.");
     }
     else
     {
-       
-        Console.WriteLine("El precio final sin descuento es: " + POriginal);
+        Console.WriteLine("El número ingresado es impar.");
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Por favor ingrese un valor numérico válido.");
+    Console.WriteLine("Error: Por favor ingrese un número válido.");
 }
