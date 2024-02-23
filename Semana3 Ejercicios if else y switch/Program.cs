@@ -1,27 +1,28 @@
 ﻿
 
-Console.WriteLine("---Validar la edad para el Club---");
+Console.WriteLine("---Validar Usuario y contraseña---");
 Console.WriteLine("");
-
-Console.WriteLine("Ingrese su edad");
-
 
 try
 {
+    int contra = 12345;
+    string user = "Mario";
+    Console.WriteLine("Ingrese su Usuario");
+    string usuario = Console.ReadLine();
+    Console.WriteLine("Ingrese su Contraseña");
     int n1 = int.Parse(Console.ReadLine());
-    if (n1 >= 18)
+
+    if (usuario == user && n1 == contra)
     {
-        Console.WriteLine("Puedes entrar al Club");
+        Console.WriteLine("Acceso Permitido");
     }
 
     else
     {
-        Console.WriteLine("No puedes entrar al Club");
+        Console.WriteLine("Acceso Denegado");
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Por favor, ingrese un número válido para la edad.");
+    Console.WriteLine("Error: Por favor, Ingrese un numero valido");
 }
-
-
