@@ -1,4 +1,7 @@
-﻿try
+﻿
+
+Console.WriteLine("Calcular el Precio Final de un Producto");
+try
 {
     
     Console.WriteLine("Ingrese el precio original del producto:");
