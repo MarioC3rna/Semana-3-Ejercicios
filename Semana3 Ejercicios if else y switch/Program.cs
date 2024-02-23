@@ -1,26 +1,24 @@
-﻿
-
-Console.WriteLine("---Validar la edad para el Club---");
-Console.WriteLine("");
-
-Console.WriteLine("Ingrese su edad");
-try
+﻿try
 {
+    
+    Console.WriteLine("Ingrese el precio original del producto:");
+    double POriginal = double.Parse(Console.ReadLine());
 
 
-    int n1 = int.Parse(Console.ReadLine());
-    if (n1 >= 18)
+    if (POriginal > 100)
     {
-        Console.WriteLine("Puedes entrar al Club");
+       
+        double descuento = POriginal * 0.10;
+        double precioFinal = POriginal - descuento;
+        Console.WriteLine("El precio final con descuento es: " + precioFinal);
     }
-
     else
     {
-        Console.WriteLine("No puedes entrar al Club");
+       
+        Console.WriteLine("El precio final sin descuento es: " + POriginal);
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Por favor, ingrese un número válido para la edad.");
+    Console.WriteLine("Error: Por favor ingrese un valor numérico válido.");
 }
-
