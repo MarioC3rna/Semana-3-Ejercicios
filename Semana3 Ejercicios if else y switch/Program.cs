@@ -1,37 +1,39 @@
 ﻿
-Console.WriteLine("---Evaluar la Calificación de un Examen---");
+Console.WriteLine("---Mostrar un Mensaje de Bienvenida en Diferentes Idiomas---");
 Console.WriteLine("");
-
+Console.WriteLine("Eliga el idioma que desee");
+Console.WriteLine("1.Español");
+Console.WriteLine("2.Ingles");
+Console.WriteLine("3.Frances");
 try
 {
-    Console.WriteLine("Ingrese la calificación del examen:");
-    int calificacion = int.Parse(Console.ReadLine());
-
-    switch (calificacion)
+    int n1 = int.Parse(Console.ReadLine());
+    string Idioma;
+    switch (n1)
     {
-        case int n when (n >= 90 && n <= 100):
-            Console.WriteLine("Sobresaliente");
+        case 1:
+
+            Idioma = "Español";
+            Console.WriteLine("--Bienvenido--");
             break;
-        case int n when (n >= 80 && n <= 89):
-            Console.WriteLine("Notable");
+
+        case 2:
+            Idioma = "Ingles";
+            Console.WriteLine("--Welcome--");
             break;
-        case int n when (n >= 70 && n <= 79):
-            Console.WriteLine("Aprobatoria");
+
+        case 3:
+            Idioma = "Frances";
+            Console.WriteLine("--Accueillir-");
             break;
-        case int n when (n >= 60 && n <= 69):
-            Console.WriteLine("No aprobatoria");
-            break;
+
+
         default:
-            Console.WriteLine("Calificación no válida");
-            break;
+            throw new Exception("Ese numero no esta en el rango");
+
     }
 }
 catch (FormatException)
 {
-    Console.WriteLine("Error: Ingrese un numero entero.");
+    Console.WriteLine("Error: Ingrese numeros validos");
 }
-catch (OverflowException)
-{
-    Console.WriteLine("Error: El número que ingreso no esta en el rango.");
-}
-
